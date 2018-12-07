@@ -7,8 +7,9 @@ ARG WORKDIR="/app/pyenv"
 
 ENV PS1 "\\\$ "
 
+# golang is a bit too big to go in the following list
 RUN    apk add gcc bash wget perl perl-dev file xz make libc-dev linux-headers g++ sed \
-           git \
+           git nodejs \
     && mkdir ${WORKDIR} \
     && cd ${WORKDIR} \
     && ${INSTALLDIR}/bin/python3 -m venv . \
